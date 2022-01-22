@@ -1,0 +1,23 @@
+{% extends 'warehouse/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        {% for product in products %}
+        <div class="column">
+            <img class="img_back" src="{% static 'img/img_back.png' %}">
+            <div class="box product">
+                <h6><strong>{{product.name}}</strong></h6>
+                <hr>
+                <button class="add_btn">Dodaj do zamówienia</button>
+                <h3 style="display: inline-block; float: right">
+                {{product.price|floatformat:2}} PLN
+                </h3>
+                
+
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock content %}

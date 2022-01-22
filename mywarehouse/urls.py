@@ -20,6 +20,4 @@ from warehouse.views import warehouse
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('warehouse.urls')),
-    path('api/', include('users.urls'))
-    
 ]
