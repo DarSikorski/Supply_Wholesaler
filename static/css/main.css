@@ -1,42 +1,65 @@
 body{
-	background-color: hsl(0, 0%, 98%);
+	background-color: hsla(0, 2%, 74%, 0.795);
+	overflow: hidden;
 }
 
 h1,h2,h3,h4,h5,h6{
-	color:hsl(0, 0%, 30%);
+	color:hsl(0, 0%, 25%);
 }
 
-.box-element{
-	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
-	background-color: #fff;
-	border-radius: 4px;
+.box{
+	width: 400px;
+	border-radius: 8px;
 	padding: 10px;
 }
 
-.thumbnail{
-	width: 100%;
-	height: 200px;
-	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
-    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
-    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
-}
-
-.product{
-	border-radius: 0 0 4px 4px;
+.img_back{
+	width: 300px;
+	height: 300px;
+	border: solid black;
+	margin-left: 50px;
 }
 
 .bg-dark{
-	background-color: #9e5428!important;
+	background-color: #7786c7!important;
 }
 
 #cart-icon{
-	width:35px;
+	width:40px;
 	display: inline-block;
 	margin-left:25px;
 }
 
 #login-icon{
-	width:35px;
+	width:40px;
 	margin-left:25px;
 }
 
+#title-icon{
+	width: 120px;
+	height: 120px;
+	margin-left: 5px;
+	margin-right: 0px;
+}
+
+.column{
+	margin-top: 20px;
+	padding: 15px;
+}
+
+.row{
+	margin-left: 15px;
+}
+
+#hydraulik{
+	width: 70%;
+	float: right;
+	border-left: rgb(211, 116, 7) double;
+}
+
+.main-text{
+	text-align: center;
+	padding: 15px;
+	width: 30%;
+	position: fixed;
+}

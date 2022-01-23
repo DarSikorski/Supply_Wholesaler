@@ -1,4 +1,5 @@
 from datetime import timedelta
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -116,7 +117,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWOR = {
+REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY':'errors',
     'DEFAULT_AUTHENTICATION_CLASSES':(
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -128,6 +129,10 @@ SIMPLE_JWT = {
    'ACCESS_TOKEN_LIFETIME':timedelta(days=1),
    'REFRESH_TOKEN_LIFETIME':timedelta(days=1),
 }
+
+MEDIA_URL = '/img/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",

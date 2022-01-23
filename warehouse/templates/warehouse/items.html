@@ -4,20 +4,17 @@
     <div class="row">
         {% for product in products %}
         <div class="column">
-            <img class="img_back" src="{% static 'img/img_back.png' %}">
+            <img class="img_back" src="{{product.imgURL}}">
             <div class="box product">
-                <h6><strong>{{product.name}}</strong></h6>
+                <h6 style="text-align: center"><strong>{{product.name}}</strong></h6>
                 <hr>
+                <h6>Ilość:{{product.amount}}</h6>
                 <button class="add_btn">Dodaj do zamówienia</button>
-                <h3 style="display: inline-block; float: right">
+                <h4 style="display: inline-block; float: right">
                 {{product.price|floatformat:2}} PLN
-                </h3>
-                
-
+                </h4>
             </div>
         </div>
-
         {% endfor %}
     </div>
-
 {% endblock content %}

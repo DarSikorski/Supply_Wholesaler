@@ -9,20 +9,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'warehouse' %}">HUTRTOWNIA ZAOPATRZENIOWA MOJŻESZ</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: rgb(211, 116, 7) solid;">
+    <img id="title-icon" href="{% url 'warehouse' %}" src="{% static 'img/title.png' %}">
+    <a class="navbar-brand" style="color: rgb(0, 0, 0); font-size: 36px; font-style: italic;" href="{% url 'warehouse' %}"><strong>HURTOWNIA HYDRAULICZNA MOJŻESZ</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'items' %}">ITEMS<span class="sr-only">(current)</span></a>
+          <a class="nav-link" style="color: rgb(0, 0, 0); font-size: 36px; font-style: italic;" href="{% url 'items' %}">OFERTA<span class="sr-only">(current)</span></a>
         </li>
         
       </ul>
       <div class="form-inline my-2 my-lg-0">
+        Zaloguj się
         <img id="login-icon" src="{% static 'img/login.svg' %}">
         
         <img  id="cart-icon" src="{% static 'img/cart.svg' %}">
@@ -33,6 +34,26 @@
 
     <div class="cont">
         {% block content %}
+          <div></div>
+            <div class="main-text">
+              <h3>O nas</h3>
+              <hr>
+              <p>Hurtownia Mojżesz Sp. z o.o. to polska rodzinna firma prężnie działająca na terenie całej Polski. Specjalizujemy się w sprzedaży produktów z techniki grzewczej, sanitarnej, sieci i przyłączy wodno-kanalizacyjnych oraz wentylacji i rekuperacji. Coraz to stawiamy sobie nowe wyzwania podnoszenia standardu współpracy z naszymi Klientami czy partnerami biznesowymi, dlatego aby jeszcze bardziej ułatwić proces zamówień, uruchomiliśmy sprzedaż online. Dzięki nowoczesnym systemom dystrybucji, które stosujemy, jesteśmy w stanie dotrzeć do Klientów z całej Polski nawet w 24h. Tak szybka wysyłka możliwa jest, ponieważ posiadamy 7 magazynów o łącznej powierzchni 5000 m2, w których magazynujemy blisko 100 000 indeksów dostępnych od ręki. Z kolei odbiór osobisty towaru możliwy jest z hurtowni stacjonarnych, które mieszczą się w województwie lubelskim i podkarpackim. </p>
+              <br/>
+              <h3>Nasza misja</h3>
+              <hr>
+              <p>Wychodzimy z założenia że praca powinna być przyjemnością. Dlatego wszystko co robimy, służy temu aby poprzez wsparcie wiedzą i doświadczeniem,
+                a także szybkie i rzetelne realizacje zamówień codziennie ułatwiać pracę setkom Instalatorów. Na pierwszym miejscu stawiamy ich potrzeby i z całych sił dążymy do ich zaspokojenia.
+                Nasza praca nie kończy się wraz ze sprzedażą produktu, nasza praca kończy się wraz z zadowoleniem naszego <strong>Klienta</strong>.</p>
+              <h3>Kontakt</h3>
+              <hr>
+              <p>Numer: 606060606<br/>Email: mojzeszhydro@mail.com</p>
+
+            </div>
+            <div class="main-jpg">
+              <img  id="hydraulik" src="{% static 'img/hydraulika.jpg' %}">
+            </div>
+          </div>
 
         {% endblock content %}
 
