@@ -40,17 +40,19 @@ class Order(models.Model):
 		return str(self.id)
 
 	@property
+	def shipping(self):
+		shipping = False
+		orderitems = self.orderitem_set.all()
+		for x in orderitems:
+			shipping = True
+		return shipping
+
+	@property
 	def get_order_total(self):
 		orderitems = self.orderitem_set.all()
 		total = sum([item.get_total for item in orderitems])
 		return total
 
-	@property
-	def get_order_items(self):
-		orderitems = self.orderitems_set.all()
-		total = sum([item.quantity for item in orderitems])
-		return total
-	
 
 class OrderItem(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)

@@ -10,7 +10,7 @@
                 <hr>
                 <h6>Ilość: {{product.amount}}</h6>
                 <h6 id="procucent">Producent: {{product.producer}}</h6>
-                <button class="button-back">Dodaj do zamówienia</button>
+                <button data-product={{product.id}} data-action="add" class="button-back add-btn update-order">Dodaj do zamówienia</button>
                 <h4 style="display: inline-block; float: right">
                 {{product.price|floatformat:2}} PLN
                 </h4>
