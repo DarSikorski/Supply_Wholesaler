@@ -28,7 +28,7 @@ class Product(models.Model):
 		except:
 			url = ''
 		return url
-
+		
 		
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)

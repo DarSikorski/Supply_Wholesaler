@@ -32,6 +32,6 @@ function updateOrder(productId, action){
         return response.json()
     })
     .then((data) =>{
-        console.log('witam')
+        location.reload()
     })
 }
