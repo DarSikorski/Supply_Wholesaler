@@ -10,7 +10,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: rgb(211, 116, 7) solid;">
-    <img id="title-icon" href="{% url 'warehouse' %}" src="{% static 'img/title.png' %}">
+    <a href="{% url 'warehouse' %}"><img id="title-icon" src="{% static 'img/title.png' %}"></a>
     <a class="navbar-brand" style="color: rgb(0, 0, 0); font-size: 36px; font-style: italic;" href="{% url 'warehouse' %}"><strong>HURTOWNIA HYDRAULICZNA MOJŻESZ</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,8 +25,8 @@
       <div class="form-inline my-2 my-lg-0">
         Zaloguj się
         <img id="login-icon" src="{% static 'img/login.svg' %}">
-        
-        <img  id="cart-icon" src="{% static 'img/cart.svg' %}">
+        <a href="{% url 'order' %}">
+        <img  id="cart-icon" src="{% static 'img/cart.svg' %}"></a>
 
      </div>
     </div>

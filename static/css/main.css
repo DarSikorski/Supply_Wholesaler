@@ -1,6 +1,6 @@
 body{
 	background-color: hsla(0, 2%, 74%, 0.795);
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -47,10 +47,26 @@ h1,h2,h3,h4,h5,h6{
 	padding: 15px;
 }
 
-.row{
-	margin-left: 15px;
+.column2{
+	padding: 10px;
 }
 
+.row{
+	margin-left: 85px;
+}
+
+.row2{
+	width: 50%;
+	float: left;
+	margin-left: 25px;
+}
+
+.row3{
+	float:right;
+	width: 30%;
+	margin-left: 50px;
+	margin-right: 50px;
+}
 #hydraulik{
 	width: 70%;
 	float: right;
@@ -62,4 +78,51 @@ h1,h2,h3,h4,h5,h6{
 	padding: 15px;
 	width: 30%;
 	position: fixed;
+}
+
+.arrow-quant{
+	width: 20px;
+}
+
+.row-img{
+	width: 60px;
+	height: 60px;
+	border: black solid 2px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(211, 116, 7);
+}
+
+.total-price{
+	float: right;
+	margin-right: 5px;
+}
+
+.button-back{
+	border-radius: 12px;
+	border: 2px solid rgb(211, 116, 7);
+	margin-left: 15px;
+	color:hsl(0, 0%, 25%);
+	font-size: large;
+	padding: 5px;
+}
+
+.button-back:hover{
+	text-decoration: none;
+}
+
+#kosz{
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
 }
