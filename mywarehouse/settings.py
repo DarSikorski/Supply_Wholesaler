@@ -1,6 +1,7 @@
 from datetime import timedelta
 import os
 from pathlib import Path
+from pickle import TRUE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'warehouse',
     'rest_framework',
-    'djoser',    
+    'djoser',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/mywarehouse/static/',
 ]
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.mail.yahoo.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER='hurtowniahydraulicznamojzesz@yahoo.com'
+EMAIL_HOST_PASSWORD='wlcpjoothmtcsvek'
+EMAIL_USE_TLS = True
+#passwordmojzesz
+#wlcpjoothmtcsvek

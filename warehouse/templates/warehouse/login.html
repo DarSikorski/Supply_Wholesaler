@@ -1,0 +1,32 @@
+{% extends 'warehouse/main.html' %}
+
+{% block content %}
+	<div style="position: fixed; margin-left: 42%;margin-top: 8%; font-size: large;">
+	<h1>Logowanie</h1>
+    <br/>
+    <form action="" method=POST>
+			{% csrf_token %}
+
+		<form>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nazwa użytkownika</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    
+  </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Hasło</label>
+        <input type="password" class="form-control" name="password">
+    </div>
+		<input type="submit" value="Zaloguj" class="btn btn-secondary">
+        <a href="{% url 'register_user' %}"><p style="color: blue;">lub załóż konto</p></a>
+		</form>
+        {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+        {% endif %}
+    </div>
+		
+
+<br/><br/>	
+{% endblock %}

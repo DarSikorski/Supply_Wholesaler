@@ -43,8 +43,8 @@
         
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        Zaloguj się
-        <img id="login-icon" src="{% static 'img/login.svg' %}">
+        <a href="{% url 'login' %}" style="margin-right: 10px;">
+        <img id="login-icon" src="{% static 'img/login.svg' %}"></a>
         <a href="{% url 'order' %}">
         <img  id="cart-icon" src="{% static 'img/cart.svg' %}"></a>
 

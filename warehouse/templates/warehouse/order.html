@@ -113,9 +113,9 @@
             )
         })
         .then((response) => response.json())
-        .then((data) =>{
+        .then((data) =>{     
             alert('Dokonano wpłaty');
-            window.location.href = "{% url 'warehouse' %}"
+            window.location.href = "{% url 'warehouse' %}";
         })
     }
 

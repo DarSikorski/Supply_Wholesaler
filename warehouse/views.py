@@ -1,6 +1,7 @@
 from itertools import product
 import json
 import datetime
+from math import prod
 from multiprocessing import context
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -25,7 +26,7 @@ def order(request):
         items = order.orderitem_set.all()
     else:
         items = []
-        order = {'get_order_total':0, 'shipping':False}
+        order = {'get_order_total':0}
     context = {'items':items, 'order':order}
     return render(request, 'warehouse/order.html', context)
 
@@ -38,9 +39,13 @@ def updateItem(request):
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order,product=product)
     if action == 'add':
-        orderItem.quantity = (orderItem.quantity + 1)
+        if product.amount != 0:
+            orderItem.quantity = (orderItem.quantity + 1)
+            product.amount = (product.amount - 1)
     elif action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
+        product.amount = (product.amount + 1)
+    product.save()
     orderItem.save()
     if orderItem.quantity <= 0:
         orderItem.delete()
@@ -54,17 +59,15 @@ def processOrder(request):
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         total = float(data['form']['total'])
         order.transaction_id = transaction_id
-
         if total == order.get_order_total:
             order.complete = True
         order.save()
-        if order.shipping == True:
-            ShippingAddress.objects.create(
-                customer=customer,
-                order=order,
-                address=data['shipping']['address'],
-                city=data['shipping']['city'],
-                state=data['shipping']['state'],
-                zipcode=data['shipping']['zipcode'],
-            )
+        ShippingAddress.objects.create(
+            customer=customer,
+            order=order,
+            address=data['shipping']['address'],
+            city=data['shipping']['city'],
+            state=data['shipping']['state'],                
+            zipcode=data['shipping']['zipcode'],
+        )
     return JsonResponse('Dokonano wpłaty.', safe=False)

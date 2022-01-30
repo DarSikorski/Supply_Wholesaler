@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
 class Customer(models.Model):
@@ -8,13 +9,16 @@ class Customer(models.Model):
 	email = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.name
+		if self.user.username==None:
+			return "ERROR-CUSTOMER NAME IS NULL"
+		return self.user.username	
+
 
 
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.FloatField()
-	amount = models.IntegerField(default=0, null=True, blank=True)
+	amount = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100000)], default=0, null=True, blank=True,)
 	producer = models.CharField(max_length=200, null= True, blank=True)
 	img = models.ImageField(null=True, blank=True)
 
@@ -39,13 +43,6 @@ class Order(models.Model):
 	def __str__(self):
 		return str(self.id)
 
-	@property
-	def shipping(self):
-		shipping = False
-		orderitems = self.orderitem_set.all()
-		for x in orderitems:
-			shipping = True
-		return shipping
 
 	@property
 	def get_order_total(self):
